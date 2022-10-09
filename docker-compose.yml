@@ -6,7 +6,7 @@ services:
     build: ./shop-frontend
     restart: always
     ports:
-      - "3400:80"
+      - "4321:80"
     depends_on:
       - api
     links:
@@ -17,7 +17,7 @@ services:
     build: ./shop-backend
     restart: always
     ports:
-      - "4200:4200"
+      - "4322:4200"
     depends_on:
       - db
 
