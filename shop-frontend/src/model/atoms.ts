@@ -10,3 +10,8 @@ export const cartState = atom<Product[]>({
   key: "cart",
   default: [],
 });
+
+export const purchaseWIndowState = atom<boolean>({
+  key: "purchaseWindow",
+  default: false,
+});

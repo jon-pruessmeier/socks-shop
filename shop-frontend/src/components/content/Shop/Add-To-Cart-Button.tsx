@@ -1,6 +1,6 @@
-import { Product } from "../../model/Product";
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { cartState } from "../../model/atoms";
+import { Product } from "../../../model/Product";
+import { useRecoilState } from "recoil";
+import { cartState } from "../../../model/atoms";
 import { useEffect, useState } from "react";
 import { BsCartCheckFill, BsCartPlusFill } from "react-icons/bs";
 
@@ -19,7 +19,7 @@ export function AddToCartButton({ product }: AddToCartButtonProps) {
   };
 
   useEffect(() => {
-    if (clicked) setTimeout(() => setClicked(false), 1500);
+    if (clicked) setTimeout(() => setClicked(false), 750);
   }, [clicked]);
 
   return (
@@ -34,9 +34,9 @@ export function AddToCartButton({ product }: AddToCartButtonProps) {
       }
     >
       {clicked ? (
-        <BsCartCheckFill size={"lg"} />
+        <BsCartCheckFill size={"80"} />
       ) : (
-        <BsCartPlusFill size={"lg"} />
+        <BsCartPlusFill size={"80"} />
       )}
     </div>
   );
