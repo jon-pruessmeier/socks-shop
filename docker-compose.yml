@@ -2,8 +2,21 @@ version: "3"
 
 services:
 
+  frontend:
+    build: ./shop-frontend
+    restart: always
+    environment:
+      - REACT_APP_API_PORT=4322
+    ports:
+      - "4321:80"
+    depends_on:
+      - api
+    links:
+      - "api:backend"
+
+
   api:
-    build: .
+    build: ./shop-backend
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: always

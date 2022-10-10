@@ -8,10 +8,15 @@ import { Description } from "./Description/Description";
 export function MainContent() {
   const [products, setProducts] = useRecoilState(productsState);
   const purchaseWindowActive = useRecoilValue(purchaseWIndowState);
+  const prod = process.env.REACT_APP_CONTEXT === "prod";
+  const url =
+    (prod
+      ? process.env.REACT_APP_API_URL + ":" + process.env.REACT_APP_API_PORT
+      : "") + "/api/products";
 
   useEffect(() => {
     const fetchingAPI = async () => {
-      const response = await fetch("/api/products", {
+      const response = await fetch(url, {
         method: "GET",
       });
       const data = await response.json();
