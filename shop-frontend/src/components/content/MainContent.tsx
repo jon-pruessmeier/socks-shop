@@ -11,7 +11,7 @@ export function MainContent() {
 
   useEffect(() => {
     const fetchingAPI = async () => {
-      const response = await fetch("http://127.0.0.1:4322/api/products", {
+      const response = await fetch("/api/products", {
         method: "GET",
       });
       const data = await response.json();

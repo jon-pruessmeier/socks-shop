@@ -1,0 +1,5 @@
+shop-frontend/node_modules
+shop-backend/node_modules
+shop-frontend/.git
+shop-backend/.git
+shop-backend/client
