@@ -5,8 +5,8 @@ services:
   frontend:
     build: ./shop-frontend
     restart: always
-    environment:
-      - REACT_APP_API_PORT=4322
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     ports:
       - "4321:80"
     depends_on:
