@@ -12,14 +12,19 @@ export function MainContent() {
 
   useEffect(() => {
     const fetchingAPI = async () => {
-      const response = await fetch(apiEndpoint, {
-        method: "GET",
-      });
-      const data = await response.json();
-      setProducts(data);
+      try {
+        const response = await fetch(apiEndpoint, {
+          method: "GET",
+        });
+        const data = await response.json();
+        setProducts(data);
+      } catch (err) {
+        setProducts([]);
+        console.log(err);
+      }
     };
 
-    fetchingAPI().catch((err) => console.log(err));
+    fetchingAPI();
   }, [setProducts]);
 
   return (
